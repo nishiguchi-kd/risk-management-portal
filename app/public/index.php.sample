@@ -1,0 +1,70 @@
+<?php
+
+// これは開発目的のための簡略化されたフロントコントローラーです
+// 実際のSymfonyアプリケーションでは、これはフレームワークによって生成されます
+
+use Symfony\Component\HttpFoundation\Request;
+
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+// 新しいSymfonyプロジェクトをセットアップする場合、これはフレームワークによって処理されます
+// 今のところ、指示付きのプレースホルダーページを表示します
+
+echo <<<HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>リスク管理ポータル</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>リスク管理ポータル - セットアップ</h1>
+        <p>Dockerの環境が正常に実行されています！ 🎉</p>
+        
+        <h2>次のステップ：</h2>
+        <ol>
+            <li>新しいSymfonyプロジェクトを作成するか、既存のプロジェクトを設定する</li>
+            <li>データベース接続をセットアップする</li>
+            <li>Twigテンプレートを適切な構造で整理する</li>
+        </ol>
+        
+        <h2>Symfonyプロジェクトを作成する：</h2>
+        <pre><code>docker-compose exec php bash
+composer create-project symfony/website-skeleton .</code></pre>
+        
+        <h2>データベースの設定：</h2>
+        <p><code>.env</code>ファイルを以下のデータベース設定で更新します：</p>
+        <pre><code>DATABASE_URL=mysql://app:app_password@database:3306/risk_management</code></pre>
+        
+        <h2>テンプレートの整理：</h2>
+        <p>Twigテンプレートを、Symfonyの構造に従って<code>templates/</code>の下の適切なディレクトリに配置します。</p>
+    </div>
+</body>
+</html>
+HTML;
